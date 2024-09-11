@@ -1,3 +1,5 @@
+#10/9/24
+
 from flask import Flask, request, render_template
 import pickle
 import numpy as np
@@ -14,7 +16,7 @@ scaler = pickle.load(open("Linear_regression/End to end ml project/scaler.pkl", 
 # Home route to render the HTML form
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
 # Prediction route
 @app.route("/predictdata", methods=['GET','POST'])
