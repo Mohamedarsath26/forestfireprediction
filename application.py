@@ -9,6 +9,19 @@ from sklearn.preprocessing import StandardScaler
 application = Flask(__name__)
 app = application
 
+# Temperature: Air temp (°C/°F)
+# RH: Humidity (%)
+# Ws: Wind speed (km/h or m/s)
+# Rain: Rainfall (mm)
+# FFMC: Fine fuel moisture Code
+# DMC: Duff moisture Code
+# DC: Drought indicator
+# ISI: Fire spread rate
+# BUI: Fuel availability
+# FWI: Fire intensity
+# Classes: Fire risk level
+# Region: Location
+
 # Load pre-trained model and scaler
 ridge_model = pickle.load(open("Linear_regression/End to end ml project/model.pkl", 'rb'))
 scaler = pickle.load(open("Linear_regression/End to end ml project/scaler.pkl", 'rb'))
@@ -16,7 +29,7 @@ scaler = pickle.load(open("Linear_regression/End to end ml project/scaler.pkl", 
 # Home route to render the HTML form
 @app.route("/")
 def index():
-    return render_template('home.html')
+    return render_template('index.html')
 
 # Prediction route
 @app.route("/predictdata", methods=['GET','POST'])
