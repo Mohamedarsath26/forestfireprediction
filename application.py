@@ -1,5 +1,4 @@
 #10/9/24
-
 from flask import Flask, request, render_template
 import pickle
 import numpy as np
@@ -16,15 +15,15 @@ app = application
 # FFMC: Fine fuel moisture Code
 # DMC: Duff moisture Code
 # DC: Drought indicator
-# ISI: Fire spread rate
+# ISI(Initial Spread Index): Fire spread rate
 # BUI: Fuel availability
 # FWI: Fire intensity
 # Classes: Fire risk level
 # Region: Location
 
 # Load pre-trained model and scaler
-ridge_model = pickle.load(open("Linear_regression/End to end ml project/model.pkl", 'rb'))
-scaler = pickle.load(open("Linear_regression/End to end ml project/scaler.pkl", 'rb'))
+ridge_model = pickle.load(open("model.pkl", 'rb'))
+scaler = pickle.load(open("scaler.pkl", 'rb'))
 
 # Home route to render the HTML form
 @app.route("/")
