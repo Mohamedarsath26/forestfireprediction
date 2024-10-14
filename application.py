@@ -31,7 +31,7 @@ def index():
     return render_template('index.html')
 
 # Prediction route
-@app.route("/predictdata", methods=['GET','POST'])
+@app.route("/predictdata", methods=['GET','POST']) ## get and post method 
 def predict_datapoint():
     if request.method == 'POST':
         try:
